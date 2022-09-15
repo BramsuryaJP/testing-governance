@@ -44,7 +44,7 @@ describe('Er Token Contract', function () {
       const values = [0];
       const ABI = ["function mint(address to, uint256 amount)"];
       const iface = new ethers.utils.Interface(ABI);
-      const address = iface.encodeFunctionData("mint", ["0x70997970C51812dc3A010C7d01b50e0d17dc79C8", hre.ethers.utils.parseEther("20.0")])
+      const address = iface.encodeFunctionData("mint", ["0x70997970C51812dc3A010C7d01b50e0d17dc79C8", hre.ethers.utils.parseEther("100.0")])
       console.log(address);
       const description = "mint to second account"
       expect(await this.erTokenGovernor.propose(targets, values, [address], description))
